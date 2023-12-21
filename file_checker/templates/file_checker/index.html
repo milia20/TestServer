@@ -1,0 +1,22 @@
+{% extends "file_checker/layout.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+
+{% block content %}
+    <p>Главная страница</p>
+    {%if tasks %}
+        {% for el in tasks %}
+            <div class="alert alert-warning mt-2">
+                <details>
+                    <summary>{{ el.title }}</summary>
+                        <p>{{ el.task }}</p>
+                </details>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Ничего не загружено</p>
+    {% endif %}
+{% endblock %}

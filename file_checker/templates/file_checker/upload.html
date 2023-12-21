@@ -1,0 +1,18 @@
+{% extends "file_checker/layout.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+
+{% block content %}
+    <p>Загрузить CSV</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.task }}<br>
+        <button type="submit" class="btn btn-success">Добавить</button>
+        <span>{{ error }}</span>
+    </form>
+
+{% endblock %}
